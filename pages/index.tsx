@@ -10,9 +10,15 @@ export default function Home() {
           content="We help overwhelmed service providers automate their entire workflow — from lead gen to fulfillment — using AI."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Built Simple" />
       </Head>
 
       <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white px-6 py-16 flex flex-col items-center">
+        <header className="w-full max-w-6xl flex justify-between items-center mb-12">
+          <h1 className="text-2xl font-bold text-white">Built Simple</h1>
+          <a href="#contact" className="text-red-400 hover:underline text-sm font-semibold">Contact</a>
+        </header>
+
         <section className="max-w-4xl text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6">
             Automate <span className="text-red-500">Everything</span> But the Work You Love.
@@ -31,18 +37,9 @@ export default function Home() {
         </section>
 
         <section className="w-full max-w-6xl grid md:grid-cols-3 gap-8 mb-20">
-          <FeatureCard
-            title="Lead Capture & Nurture"
-            description="Auto-qualify leads, send instant replies, and book calls while you sleep. No more ghosting."
-          />
-          <FeatureCard
-            title="AI-Generated Content"
-            description="We turn your ideas or client wins into daily social posts — visuals, hooks, captions, and all."
-          />
-          <FeatureCard
-            title="Client Workflow Automation"
-            description="Onboarding, contracts, check-ins, invoices — we build flows that trigger automatically."
-          />
+          <FeatureCard title="Lead Capture & Nurture" description="Auto-qualify leads, send instant replies, and book calls while you sleep. No more ghosting." />
+          <FeatureCard title="AI-Generated Content" description="We turn your ideas or client wins into daily social posts — visuals, hooks, captions, and all." />
+          <FeatureCard title="Client Workflow Automation" description="Onboarding, contracts, check-ins, invoices — we build flows that trigger automatically." />
         </section>
 
         <section className="max-w-4xl text-center mb-20">
@@ -105,7 +102,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="text-center py-20">
+        <section className="text-center py-20" id="contact">
           <h2 className="text-4xl font-bold mb-4">This Will Work For You.</h2>
           <p className="text-lg text-gray-300 mb-6">
             You don&apos;t need to know code. You don&apos;t need to change platforms. You just need to want to save time and grow.
@@ -119,6 +116,10 @@ export default function Home() {
             Let&apos;s Build Simple →
           </a>
         </section>
+
+        <footer className="w-full max-w-6xl text-center text-sm text-gray-500 border-t border-white/10 pt-8">
+          &copy; {new Date().getFullYear()} Built Simple. All rights reserved.
+        </footer>
       </main>
     </>
   );
