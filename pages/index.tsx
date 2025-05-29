@@ -18,7 +18,7 @@ export default function Home() {
             Automate <span className="text-red-500">Everything</span> But the Work You Love.
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            We build AI-powered systems for service businesses ready to scale without burnout. From intake to content to client delivery — it's all done for you.
+            We build AI-powered systems for service businesses ready to scale without burnout. From intake to content to client delivery — it&apos;s all done for you.
           </p>
           <a
             href="https://your-jotform-link.com"
@@ -48,14 +48,14 @@ export default function Home() {
         <section className="max-w-4xl text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Built Simple?</h2>
           <p className="text-lg text-gray-300">
-            Because you're a real business owner — not a robot. We eliminate digital busywork so you can spend time on strategy, sales, or simply living.
+            Because you&apos;re a real business owner — not a robot. We eliminate digital busywork so you can spend time on strategy, sales, or simply living.
           </p>
         </section>
 
         <section className="w-full max-w-3xl bg-white/5 border border-white/10 rounded-2xl p-10 text-center shadow-xl mb-20">
-          <h3 className="text-2xl font-semibold text-red-400 mb-4">Let's Make It Easy.</h3>
+          <h3 className="text-2xl font-semibold text-red-400 mb-4">Let&apos;s Make It Easy.</h3>
           <p className="text-md text-gray-300 mb-6">
-            Whether you're a coach, creative, or consultant — we custom-build automations to fit your brand, your offers, and your backend.
+            Whether you&apos;re a coach, creative, or consultant — we custom-build automations to fit your brand, your offers, and your backend.
           </p>
           <a
             href="https://your-jotform-link.com"
@@ -108,7 +108,7 @@ export default function Home() {
         <section className="text-center py-20">
           <h2 className="text-4xl font-bold mb-4">This Will Work For You.</h2>
           <p className="text-lg text-gray-300 mb-6">
-            You don’t need to know code. You don’t need to change platforms. You just need to want to save time and grow.
+            You don&apos;t need to know code. You don&apos;t need to change platforms. You just need to want to save time and grow.
           </p>
           <a
             href="https://your-jotform-link.com"
@@ -116,7 +116,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Let's Build Simple →
+            Let&apos;s Build Simple →
           </a>
         </section>
       </main>
@@ -136,7 +136,7 @@ function FeatureCard({ title, description }: { title: string; description: strin
 function TestimonialCard({ name, title, quote }: { name: string; title: string; quote: string }) {
   return (
     <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left shadow-md">
-      <p className="italic text-sm text-gray-300 mb-4">"{quote}"</p>
+      <p className="italic text-sm text-gray-300 mb-4">&quot;{quote}&quot;</p>
       <h4 className="text-md font-semibold text-white">{name}</h4>
       <p className="text-xs text-gray-400">{title}</p>
     </div>
