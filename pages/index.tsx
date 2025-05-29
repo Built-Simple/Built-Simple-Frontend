@@ -27,10 +27,8 @@ export default function Home() {
             We build AI-powered systems for service businesses ready to scale without burnout. From intake to content to client delivery — it&apos;s all done for you.
           </p>
           <a
-            href="https://your-jotform-link.com"
+            href="#form"
             className="inline-block bg-red-600 hover:bg-red-700 transition px-8 py-4 rounded-xl text-lg font-semibold"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Book Your Free Automation Audit
           </a>
@@ -55,10 +53,8 @@ export default function Home() {
             Whether you&apos;re a coach, creative, or consultant — we custom-build automations to fit your brand, your offers, and your backend.
           </p>
           <a
-            href="https://your-jotform-link.com"
+            href="#form"
             className="bg-red-600 hover:bg-red-700 transition px-8 py-3 rounded-xl text-md font-bold inline-block"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Claim My Free Audit Call
           </a>
@@ -102,23 +98,33 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="w-full max-w-4xl mb-20" id="form">
+          <h2 className="text-3xl font-bold text-center mb-6">Apply for a Free Automation Audit</h2>
+          <iframe
+            title="Built Simple Form"
+            src="https://form.jotform.com/251482303686156"
+            width="100%"
+            height="800"
+            allowFullScreen
+            className="border-0 rounded-xl shadow-lg"
+          ></iframe>
+        </section>
+
         <section className="text-center py-20" id="contact">
           <h2 className="text-4xl font-bold mb-4">This Will Work For You.</h2>
           <p className="text-lg text-gray-300 mb-6">
             You don&apos;t need to know code. You don&apos;t need to change platforms. You just need to want to save time and grow.
           </p>
           <a
-            href="https://your-jotform-link.com"
+            href="#form"
             className="bg-red-600 hover:bg-red-700 transition px-10 py-4 rounded-full text-md font-bold inline-block"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Let&apos;s Build Simple →
           </a>
         </section>
 
         <footer className="w-full max-w-6xl text-center text-sm text-gray-500 border-t border-white/10 pt-8">
-          &copy; {new Date().getFullYear()} Built Simple. All rights reserved.
+          &copy; {new Date().getFullYear()} Built Simple. All rights reserved. Contact: info@built-simple.ai
         </footer>
       </main>
     </>
