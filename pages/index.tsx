@@ -1,6 +1,20 @@
 import Head from 'next/head';
+import Image from 'next/image';
+import { useState, useRef } from 'react';
 
 export default function Home() {
+  const [showForm, setShowForm] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+    if (!showForm && formRef.current) {
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -11,11 +25,12 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Built Simple" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white px-6 py-16 flex flex-col items-center">
         <header className="w-full max-w-6xl flex justify-between items-center mb-12">
-          <h1 className="text-2xl font-bold text-white">Built Simple</h1>
+          <Image src="/logo.png" alt="Built Simple Logo" width={120} height={40} />
           <a href="#contact" className="text-red-400 hover:underline text-sm font-semibold">Contact</a>
         </header>
 
@@ -27,10 +42,10 @@ export default function Home() {
             We build AI-powered systems for service businesses ready to scale without burnout. From intake to content to client delivery — it&apos;s all done for you.
           </p>
           <a
-            href="#form"
+            href="#schedule"
             className="inline-block bg-red-600 hover:bg-red-700 transition px-8 py-4 rounded-xl text-lg font-semibold"
           >
-            Book Your Free Automation Audit
+            Claim My Free Audit Call
           </a>
         </section>
 
@@ -53,7 +68,7 @@ export default function Home() {
             Whether you&apos;re a coach, creative, or consultant — we custom-build automations to fit your brand, your offers, and your backend.
           </p>
           <a
-            href="#form"
+            href="#schedule"
             className="bg-red-600 hover:bg-red-700 transition px-8 py-3 rounded-xl text-md font-bold inline-block"
           >
             Claim My Free Audit Call
@@ -69,46 +84,42 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full max-w-5xl mb-20 grid md:grid-cols-2 gap-12">
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6 shadow-lg">
-            <h4 className="text-xl font-bold text-red-400 mb-2">Real-Time Demo</h4>
-            <p className="text-gray-300 text-sm mb-4">
-              Watch a 90-second demo where we walk through a real automation — from lead capture to onboarding.
-            </p>
-            <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                className="w-full h-full rounded-xl"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Automation Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6 shadow-lg">
-            <h4 className="text-xl font-bold text-red-400 mb-2">How It Works</h4>
-            <ul className="text-gray-300 text-sm list-disc pl-5 space-y-2">
-              <li>Step 1: Book your free automation audit</li>
-              <li>Step 2: We analyze your current workflow</li>
-              <li>Step 3: We build a custom AI stack using your tools</li>
-              <li>Step 4: You approve → we implement → done</li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="w-full max-w-4xl mb-20" id="form">
-          <h2 className="text-3xl font-bold text-center mb-6">Apply for a Free Automation Audit</h2>
+        <section className="w-full max-w-3xl mb-20 text-center" id="schedule">
+          <h4 className="text-xl font-bold text-red-400 mb-4">Schedule Your Audit Call</h4>
           <iframe
-            title="Built Simple Form"
-            src="https://form.jotform.com/251482303686156"
+            src="https://app.acuityscheduling.com/schedule.php?owner=35940395&calendarID=12220624&ref=embedded_csp"
+            title="Schedule Audit Call"
             width="100%"
-            height="800"
-            allowFullScreen
-            className="border-0 rounded-xl shadow-lg"
+            height="400"
+            frameBorder="0"
+            className="rounded-md"
+            loading="lazy"
           ></iframe>
         </section>
+
+        <section className="text-center mb-12">
+          <p className="text-sm text-gray-400">Questions?</p>
+          <button
+            onClick={toggleForm}
+            className="text-red-400 underline text-sm hover:text-red-300"
+          >
+            Click here
+          </button>
+        </section>
+
+        {showForm && (
+          <section ref={formRef} className="w-full max-w-4xl mb-20">
+            <h2 className="text-3xl font-bold text-center mb-6">Apply for a Free Automation Audit</h2>
+            <iframe
+              title="Built Simple Form"
+              src="https://form.jotform.com/251482303686156"
+              width="100%"
+              height="800"
+              allowFullScreen
+              className="border-0 rounded-xl shadow-lg"
+            ></iframe>
+          </section>
+        )}
 
         <section className="text-center py-20" id="contact">
           <h2 className="text-4xl font-bold mb-4">This Will Work For You.</h2>
@@ -116,7 +127,7 @@ export default function Home() {
             You don&apos;t need to know code. You don&apos;t need to change platforms. You just need to want to save time and grow.
           </p>
           <a
-            href="#form"
+            href="#schedule"
             className="bg-red-600 hover:bg-red-700 transition px-10 py-4 rounded-full text-md font-bold inline-block"
           >
             Let&apos;s Build Simple →
