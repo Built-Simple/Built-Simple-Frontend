@@ -3,13 +3,6 @@ import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 
 // Constants for better maintainability
-const BRAND = {
-  primary: 'red-600',
-  primaryHover: 'red-700',
-  accent: 'red-400',
-  accentHover: 'red-300'
-} as const;
-
 const CTA_TEXT = {
   audit: 'Claim My Free Audit Call',
   ai: 'Join the Waitlist',
